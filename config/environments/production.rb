@@ -4,6 +4,8 @@ Prelaunchr::Application.configure do
   # Code is not reloaded between requests
   config.cache_classes = true
 
+  config.assets.initialize_on_precompile = false
+
   # Full error reports are disabled and caching is turned on
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
@@ -20,7 +22,9 @@ Prelaunchr::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
-  config.assets.precompile += %w( core.css bootstrap.css reset.css )
+  config.assets.precompile += %w(
+    core.css bootstrap.css reset.css
+  )
 
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
