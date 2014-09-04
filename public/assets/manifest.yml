@@ -65,6 +65,8 @@ refer/winston@2x.png: refer/winston@2x-e3d08d6f6b936c3c692731632471f78a.png
 refer/winston@2x/index.png: refer/winston@2x-e3d08d6f6b936c3c692731632471f78a.png
 application.js: application-d1dbc22ff3da2fa875d5b9de579f6111.js
 application/index.js: application-d1dbc22ff3da2fa875d5b9de579f6111.js
+active_admin.css: active_admin-f58fc98e42733be6473403cf53156e11.css
+active_admin/index.css: active_admin-f58fc98e42733be6473403cf53156e11.css
 application.css: application-ccc4449360e2e7903d4c262d380360c6.css
 application/index.css: application-ccc4449360e2e7903d4c262d380360c6.css
 bootstrap.css: bootstrap-44bd10ee336ff4bb54572ea33cea04d8.css
