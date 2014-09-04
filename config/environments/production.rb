@@ -21,7 +21,7 @@ Prelaunchr::Application.configure do
   config.assets.digest = true
 
   config.assets.precompile += %w(
-    core.css bootstrap.css reset.css
+    core.css bootstrap.css reset.css active_admin.css
   )
 
   # Defaults to nil and saved in location specified by config.assets.prefix
