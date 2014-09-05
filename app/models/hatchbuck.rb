@@ -35,7 +35,7 @@ class Hatchbuck
         'address' => @user.email,
         'type' => 'Work'
       }],
-      'custom_fields' => [{
+      'customFields' => [{
         'name' => 'Referral Code',
         'value' => user.referral_code
       },
