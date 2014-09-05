@@ -50,7 +50,7 @@ class UsersController < ApplicationController
             end
 
             @user.save
-            Hatchbuck.new(@user).post_data
+            Hatchbuck.new(@user).delay.post_data
         end
 
         # Send them over refer action
