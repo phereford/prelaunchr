@@ -49,8 +49,8 @@ class UsersController < ApplicationController
                 @user.referrer = @referred_by
             end
 
-            @user.save
             Hatchbuck.new(@user).post_data
+            @user.save
         end
 
         # Send them over refer action
