@@ -52,8 +52,9 @@ class UsersController < ApplicationController
             hatchbuck = Hatchbuck.new(@user)
             data = hatchbuck.post_data
             @user.hatchbuck_id = data['emails'].first['id']
-            hatchbuck.post_custom_field_data
             @user.save
+
+            hatchbuck.post_custom_field_data
         end
 
         # Send them over refer action
