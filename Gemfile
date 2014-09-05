@@ -45,4 +45,5 @@ gem 'unicorn'
 # To use debugger
 # gem 'debugger'
 
+gem 'httparty'
 gem 'rails_12factor', group: :production
