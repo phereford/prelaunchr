@@ -41,7 +41,7 @@ class Hatchbuck
       },
       {
         'name' => 'Referred By',
-        'value' => user.referrer_id.to_s
+        'value' => User.find(user.referrer_id).email
       }]
     }
   end
