@@ -37,13 +37,11 @@ class Hatchbuck
       }],
       'customFields' => [{
         'field' => 'Referral Code',
-        'value' => user.referral_code,
-        'typeId' => SecureRandom.hex(10)
+        'value' => user.referral_code
       },
       {
         'field' => 'Referred By',
-        'value' => User.find(user.referrer_id).email,
-        'typeId' => SecureRandom.hex(10)
+        'value' => User.find(user.referrer_id).email
       }]
     }
   end
