@@ -14,15 +14,15 @@ class Hatchbuck
   private
   def query_parameters(user)
     {
-      email: user.email,
-      status: user.id,
-      custom_fields: [{
-        name: 'Referral Code',
-        value: user.referral_code
+      'email' => user.email,
+      'status' => user.id.to_s,
+      'custom_fields' => [{
+        'name' => 'Referral Code',
+        'value' => user.referral_code
       },
       {
-        name: 'Referred By',
-        value: user.referrer_id
+        'name' => 'Referred By',
+        'value' => user.referrer_id.to_s
       }]
     }.to_json
   end
