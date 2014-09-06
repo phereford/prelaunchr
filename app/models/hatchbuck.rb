@@ -37,11 +37,11 @@ class Hatchbuck
       }],
       'customFields' => [{
         'name' => 'referralCode',
-        'value' => user.referral_code
+        'value' => @user.referral_code
       },
       {
         'name' => 'referredBy',
-        'value' => user.referrer_id ? User.find(user.referrer_id).try(:email) : nil
+        'value' => @user.referrer_id ? User.find(@user.referrer_id).try(:email) : nil
       }]
     }
   end
