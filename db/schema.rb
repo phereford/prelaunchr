@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(:version => 20140905111343) do
     t.integer  "referrer_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
-    t.string   "hatchbuck_id",  :null => false
+    t.string   "hatchbuck_id"
   end
 
 end
