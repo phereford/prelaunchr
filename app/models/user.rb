@@ -40,12 +40,12 @@ class User < ActiveRecord::Base
     private
 
     def create_referral_code
-        referral_code = SecureRandom.hex(5)
+      referral_code = SecureRandom.hex(3)[0..4]
         @collision = User.find_by_referral_code(referral_code)
 
         while !@collision.nil?
-            referral_code = SecureRandom.hex(5)
-            @collision = User.find_by_referral_code(referral_code)
+          referral_code = SecureRandom.hex(3)[0..4]
+          @collision = User.find_by_referral_code(referral_code)
         end
 
         self.referral_code = referral_code
