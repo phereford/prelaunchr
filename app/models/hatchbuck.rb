@@ -41,7 +41,7 @@ class Hatchbuck
       },
       {
         'name' => 'referredBy',
-        'value' => @user.referrer_id ? User.find(@user.referrer_id).try(:email) : nil
+        'value' => @user.referrer_id ? User.find(@user.referrer_id).try(:email) : ""
       }]
     }
   end
