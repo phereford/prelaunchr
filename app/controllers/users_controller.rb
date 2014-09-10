@@ -51,10 +51,10 @@ class UsersController < ApplicationController
 
             
             @user.save
-            data = Hatchbuck.new(@user).post_data
+            data = Hatchbuck.new(request.domain, @user).post_data
             @user.hatchbuck_id = data['emails'].first['id']
 
-            Hatchbuck.new(@user).post_custom_field_data
+            Hatchbuck.new(request.domain, @user).post_custom_field_data
             @user.save
         end
 

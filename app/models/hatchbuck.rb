@@ -1,8 +1,9 @@
 class Hatchbuck
   include HTTParty
 
-  def initialize(user)
+  def initialize(domain, user)
     @api_key = ENV['HATCHBUCK_API_KEY'] || 'MG42cmdBS2M1MzdUdEhQbGMxZ3NmWFllVWoxbHloRnZBZ1JTamZsUExjSTE1'
+    @domain = domain
     @user = user
   end
 
@@ -37,7 +38,7 @@ class Hatchbuck
       }],
       'customFields' => [{
         'name' => 'referralCode',
-        'value' => @user.referral_code
+        'value' => "http://#{@domain}/r/" + @user.referral_code
       },
       {
         'name' => 'referredBy',
