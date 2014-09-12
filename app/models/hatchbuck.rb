@@ -15,7 +15,27 @@ class Hatchbuck
     self.class.put("https://api.hatchbuck.com/api/v1/contact?api_key=#{@api_key}", body: custom_field_parameters(@user).to_json, headers: { 'Content-Type' => 'application/json' })
   end
 
+  def add_prelaunchr_tag
+    self.class.post("https://api.hatchbuck.com/api/v1/contact/#{@user.email}/Tags?api_key=#{@api_key}", body: prelaunchr_tag.to_json, headers: { 'Content-Type' => 'application/json' })
+  end
+
+  def add_referral_tag
+    self.class.post("https://api.hatchbuck.com/api/v1/contact/#{@user.referrer.email}/Tags?api_key=#{@api_key}", body: referral_tag.to_json, headers: { 'Content-Type' => 'application/json' })
+  end
+
   private
+  def referral_tag
+    [{
+      name: 'referral'
+    }]
+  end
+
+  def prelaunchr_tag
+    [{
+      'name' => 'prelaunchr'
+    }]
+  end
+
   def query_parameters(user)
     {
       'api_key' => @api_key,

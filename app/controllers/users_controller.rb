@@ -55,6 +55,11 @@ class UsersController < ApplicationController
             @user.hatchbuck_id = data['emails'].first['id']
 
             Hatchbuck.new(request.domain, @user).post_custom_field_data
+            Hatchbuck.new(request.domain, @user).add_prelaunchr_tag
+
+            if @user.referrer
+              Hatchbuck.new(request.domain, @user).add_referral_tag
+            end
             @user.save
         end
 
