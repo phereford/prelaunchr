@@ -1,23 +1,118 @@
-<div class="hero">
-    <p class="large brandon">Turkey planning is near</p>
-    <p class="small brandon">
-      Planning the perfect turkey is never easy.<br />Signup to get our full proof recipe.<br />
-      So far, <strong><%= User.all.count %></strong> people think the same!
-    </p>
-</div>
+<body>
+<section class="header">
+  <div class="inner">
+    <div class="row to-center">
+      <h1 class="logo top-40 top-lg-75">Hupla</h1>
+    </div>
 
-<div class="form-wrap clearfix <%= "ended" if Rails.application.config.ended %>">
-    <% if Rails.application.config.ended %>
-        <p class="thanks brandon">THANK YOU FOR PARTICIPATING<br>IN OUR PRE-LAUNCH.</p>
-        <p class="compiling brandon">WE ARE COMPILING REWARDS RIGHT NOW AND WILL EMAIL<br/>COUPON CODES TO ALL RECIPIENTS IN THE NEXT DAY OR TWO</p>
-        <p class="go-to brandon">In the meantime, head to  <a href="http://www.emps.io/">WWW.EMPS.IO</a></p>
-        <p class="again brandon">Thank You Again!</p>
-    <% else %>
-        <div class="key"></div>
-        <p class="byline brandon">Be the first to know</p>
-        <%= form_for @user, :url => { :action => "create" } do |f| %>
-            <%= f.text_field :email, :placeholder => "Enter Email", :class => "email brandon" %>
-            <input class="submit brandon" name="commit" type="submit" value="Step Inside" />
-        <% end %>
-    <% end %>
-</div>
+    <div class="row top-60 top-lg-95 to-center">
+      <h2>When was the last time you <br class="br-desktop" />actually saw your 'friends'?</h2>
+    </div>
+
+    <div class="row top-30 top-lg-25 to-center">
+      <p>Hupla is a super easy way to quickly connect with <br class="br-desktop" />friends who are available to do things.</p>
+    </div>
+
+    <div class="row top-100 top-lg-75 to-center">
+      <%= form_for @user, :url => { :action => "create" }, html: { class: "form1 desktop" } do |f| %>
+        <%= f.text_field :email, :placeholder => "Enter your email..." %>
+        <input name="commit" type="submit" value="Get notified" />
+      <% end %>
+
+      <%= form_for @user, :url => { :action => "create" }, html: { class: "form1 mobile" } do |f| %>
+        <%= f.text_field :email, :placeholder => "Enter your email..." %>
+        <input name="commit" type="submit" value="Get notified" />
+      <% end %>
+    </div>
+
+    <div class="row top-70 top-lg-110">
+      <div class="phone">
+        <%= image_tag 'img1.jpg' %>
+      </div>
+      <div class="box-left">
+        <div class="box-valign top-40">
+          <h2>See who wants to hang out.</h2>
+          <p class="top-50 top-lg-40">Quickly find friends who are available to do things. Instantly tell your friends you want to hang out too.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row top-lg-65"></div>
+  </div>
+</section>
+
+<hr class="hr-1" />
+
+<section class="section-odd">
+  <div class="inner">
+    <div class="row top-lg-75">
+      <div class="box-right">
+        <div class="box-valign">
+          <h2>Tell your friends what you want to do.</h2>
+          <p class="top-40 top-lg-40">Share activities with your friends or the whole campus. See what cool things your friends want to do this afternoon and join them!</p>
+        </div>
+      </div>
+      <div class="phone desktop">
+        <%= image_tag 'img1.jpg' %>
+      </div>
+    </div>
+
+    <div class="row top-lg-65"></div>
+  </div>
+</section>
+
+<hr class="hr-2" />
+
+<section class="section-even">
+  <div class="inner">
+    <div class="row top-lg-75">
+      <div class="box-left">
+        <div class="box-valign">
+          <h2>Know everything going on around you.</h2>
+          <p class="top-40 top-lg-40">Find out what's going on at your campus. Sort through activities based on interests like baseball and meet new people too while you're at it.</p>
+        </div>
+      </div>
+      <div class="phone desktop">
+        <%= image_tag 'img1.jpg' %>
+      </div>
+    </div>
+
+    <div class="row top-110 top-lg-65"></div>
+  </div>
+</section>
+
+<section class="footer">
+  <div class="inner">
+    <div class="row top-100 top-lg-130 to-center">
+      <h2>An app that gets you hanging <br class="br-desktop" />out with real people.</h2>
+    </div>
+
+    <div class="row top-30 top-lg-25 to-center">
+      <p>Currently, the app is still being produced. But if you give us your email we <br class="br-desktop" />will notify you when it's available for download.</p>
+    </div>
+
+    <div class="row top-90 top-lg-110 to-center">
+      <%= form_for @user, :url => { :action => "create" }, html: { class: "form1 desktop" } do |f| %>
+        <%= f.text_field :email, :placeholder => "Enter your email..." %>
+        <input name="commit" type="submit" value="Get notified" />
+      <% end %>
+
+      <%= form_for @user, :url => { :action => "create" }, html: { class: "form1 mobile" } do |f| %>
+        <%= f.text_field :email, :placeholder => "Enter your email..." %>
+        <input name="commit" type="submit" value="Get notified" />
+      <% end %>
+    </div>
+
+    <div class="row top-175 top-lg-330" style="margin-top: 200px"></div>
+  </div>
+</section>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-56541219-1', 'auto');
+ga('send', 'pageview');
+</script>
+</body>

@@ -1,72 +1,30 @@
-<div class="header">
-    <div class="content">
-        <p class="logo brandon">Emps</p>
-        <p class="byline brandon">THANK YOU FOR SIGNING UP</p>
+<body style="background: #584ea8">
+<section class="header header2">
+  <div class="inner">
+    <div class="row to-center">
+      <h1 class="logo top-40 top-lg-85">Hupla</h1>
     </div>
-</div>
 
-<div class="hero">
-    <div class="page-content clearfix">
-        <div class="mammoth">
-          <br />
-          <br />
-            <span class="need brandon">Basting Is<br>Amazing</span>
-        </div>
-        <div class="share-wrap">
-            <p class="why brandon">Don't leave your friends behind</p>
-            <p class="title brandon">INVITE FRIENDS &<br>Earn Product</p>
-            <p class="subtitle brandon">Share your unique link via email, Facebook<br>or Twitter and earn Emps goods for<br>each friend who signs up.</p>
-            <div class="copy-link brandon"><%= root_url %>r/<%= @user.referral_code %></div>
-            <% twitter_message = "#Shaving is evolving. Excited for @emps to launch." %>
-            <div class="social-links">
-                <a href="http://www.facebook.com/sharer/sharer.php?u=<%= CGI::escape(root_url) %>r/<%= CGI::escape(@user.referral_code) %>&title=Emps" class="fb" target="_blank"></a>
-                <div class="sep"></div>
-                <a href="http://twitter.com/share?url=<%= CGI::escape(root_url) %>r/<%= CGI::escape(@user.referral_code) %>&text=<%= CGI::escape(twitter_message) %>" class="twit" target="_blank"></a>
-            </div>
-        </div>
-    </div>
-</div>
+    <div class="row top-60 top-lg-85">
+      <div class="half resp to-center">
+        <h2>Earn a chance to win party money by inviting more friends</h2>
+        <p class="top-20">Share your unique link via Facebook, Twitter or email. Each friend you sign up gets you a change to win $2,500 towards a party.</p>
+      </div>
+      <div class="half resp top-70">
+        <form class="form2">
+          <h4>Invite your friends to win</h4>
 
-<% 
-    referrals_count = @user.referrals.count
+          <nav class="top-35 top-lg-25">
+            <%- twitter_message = 'asd' %>
+            <a href="http://www.facebook.com/sharer/sharer.php?u=<%= CGI::escape(root_url) %>r/<%= CGI::escape(@user.referral_code) %>&title=Hupla" class="facebook"></a>
+            <a href="http://twitter.com/share?url=<%= CGI::escape(root_url) %>r/<%= CGI::escape(@user.referral_code) %>&text=<%= CGI::escape(twitter_message) %>" class="twitter"></a>
+            <a class="email"></a>
+          </nav>
+          <%- referrals_count = @user.referrals.count %>
 
-    stops = User::REFERRAL_STEPS
-
-    found = nil
-
-    stops.reverse_each { |stop|
-        if stop["count"] <= referrals_count and !found
-            stop["selected"] = true
-            found = stop
-        else
-            stop["selected"] = false
-        end
-    }   
- %>
-<div class="prizes <% if found %>prize-<%= found["class"] %><% end %>">
-    <div class="page-content">
-        <p class="callout brandon">Here's How It Works:</p>
-        <ul class="products clearfix">
-            <li class="title brandon"><p class="friends">Friends Joined</p><p class="rewards">Emps Product</p></li>
-            <% stops.each do |stop| %>
-                <li class="product brandon <% if stop["selected"] %>selected<% end %> <% if stop["class"] == 'five' %>last<% end %>">
-                    <div class="circle"><%= stop["count"] %></div>
-                    <div class="sep"></div>
-                    <p><%= stop["html"].html_safe %></p>
-
-                    <div class="tooltip">
-                        <img src="<%= stop["image"] %>" height="254">
-                    </div>
-                </li>
-            <% end %>
-        </ul>
-
-        <div class="progress">
-            <div class="mover">
-                <div class="bar clearfix"></div>
-            </div>
-        </div>
-
+          <div class="row input-wrap top-45 top-lg-20">
+            <input type="text" value="<%= root_url %>r/<%= @user.referral_code %>" />
+          </div>
         <% 
             words = ''
             if referrals_count == 1
@@ -77,14 +35,68 @@
 
         %>
 
-        <% if referrals_count == 0 %>
-            <p class="place brandon"><span>No</span> friends have joined...Yet!</p>
+        <%- if referrals_count == 0 %>
+          <em class="desktop top-lg-20"><b>No</b> friends have signed up!</em>
         <% else %>
+          <em class="desktop top-lg-20"><b><%= referrals_count %></b> <%= words %> signed up!</em>
             <p class="place brandon"><span><%= referrals_count %></span> <%= words %> joined</p>
         <% end %>
-        <p class="check brandon">Keep checking</p>
 
-        <p class="ship brandon">We ship to the U.S. (& Canada Soon)</p>        
-        <a class="policy brandon" href="/privacy-policy" target="_blank">Privacy Policy</a>
+        </form>
+      </div>
     </div>
-</div>
+  </div>
+</section>
+
+<hr class="hr-3" />
+
+<section>
+  <div class="inner">
+    <div class="row top-80 to-center">
+      <h4>What does a $2,500 party look like?</h4>
+    </div>
+
+    <div class="row top-50 top-lg-35 to-center">
+      <div class="half resp">
+        <div class="half">
+          <div class="img-box">
+            <%= image_tag 'img-box1.jpg' %>
+            <em>100<br>beer kegs</em>
+          </div>
+        </div>
+        <div class="half">
+          <div class="img-box">
+            <%= image_tag 'img-box2.jpg' %>
+            <em>500<br>handles</em>
+          </div>
+        </div>
+      </div>
+      <div class="half resp top-20">
+        <div class="half">
+          <div class="img-box">
+            <%= image_tag 'img-box3.jpg' %>
+            <em>1,000<br>bottles of beer</em>
+          </div>
+        </div>
+        <div class="half">
+          <div class="img-box">
+            <%= image_tag 'img-box4.jpg' %>
+            <em>5,000<br>red plastic cups</em>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row top-60 top-lg-35"></div>
+  </div>
+</section>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-56541219-1', 'auto');
+ga('send', 'pageview');
+</script>
+</body>
