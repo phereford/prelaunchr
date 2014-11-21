@@ -421,15 +421,15 @@ p {
   }
 }
 body {
-  background: #01c0d2 image-url(site-bg.jpg) repeat-x center top;
+  background: #01c0d2 image-url('site-bg.jpg') repeat-x center top;
 }
 @media screen and (min-width: 960px) {
   .header {
-    background: #55bdcf image-url(header-bg.jpg) repeat-x center top;
+    background: #55bdcf image-url('header-bg.jpg') repeat-x center top;
   }
 }
 .header .logo {
-  background: image-url(logo-mobile.png);
+  background: image-url('logo-mobile.png');
   width: 236px;
   height: 201px;
   display: inline-block;
@@ -437,7 +437,7 @@ body {
 }
 @media screen and (min-width: 960px) {
   .header .logo {
-    background: image-url(logo.png);
+    background: image-url('logo.png');
     width: 121px;
     height: 104px;
   }
@@ -484,7 +484,7 @@ body {
 }
 @media screen and (min-width: 960px) {
   .footer {
-    background: image-url(footer-bg.jpg) center;
+    background: image-url('footer-bg.jpg') center;
     background-size: cover;
     position: relative;
   }
@@ -644,7 +644,7 @@ body {
   display: inline-block;
 }
 .form2 nav a {
-  background: image-url(social-sprite.png);
+  background: image-url('social-sprite.png');
   width: 60px;
   height: 60px;
   border: 3px solid #fff;
@@ -671,7 +671,7 @@ body {
 }
 .form2 nav a:before {
   content: '';
-  background: image-url(social-sprite.png);
+  background: image-url('social-sprite.png');
   width: 60px;
   height: 60px;
   display: block;
@@ -764,7 +764,7 @@ body {
   font-weight: 300;
 }
 .phone {
-  background: image-url(phone.png);
+  background: image-url('phone.png');
   width: 305px;
   height: 543px;
   padding: 134px 63px 135px 64px;
