@@ -16,12 +16,16 @@
     <div class="row top-100 top-lg-75 to-center">
       <%= form_for @user, :url => { :action => "create" }, html: { class: "form1 desktop" } do |f| %>
         <%= f.text_field :email, :placeholder => "Enter your email..." %>
-        <input name="commit" type="submit" value="Get notified" />
+        <button name="commit" type="submit" value="Get notified">
+          Get notified
+        </button>
       <% end %>
 
       <%= form_for @user, :url => { :action => "create" }, html: { class: "form1 mobile" } do |f| %>
         <%= f.text_field :email, :placeholder => "Enter your email..." %>
-        <input name="commit" type="submit" value="Get notified" />
+        <button name="commit" type="submit" value="Get notified">
+          Get notified
+        </button>
       <% end %>
     </div>
 
@@ -94,12 +98,16 @@
     <div class="row top-90 top-lg-110 to-center">
       <%= form_for @user, :url => { :action => "create" }, html: { class: "form1 desktop" } do |f| %>
         <%= f.text_field :email, :placeholder => "Enter your email..." %>
-        <input name="commit" type="submit" value="Get notified" />
+        <button name="commit" type="submit" value="Get notified">
+          Get Notified
+        </button>
       <% end %>
 
       <%= form_for @user, :url => { :action => "create" }, html: { class: "form1 mobile" } do |f| %>
         <%= f.text_field :email, :placeholder => "Enter your email..." %>
-        <input name="commit" type="submit" value="Get notified" />
+        <button name="commit" type="submit" value="Get notified">
+          Get notified
+        </button>
       <% end %>
     </div>
 
